@@ -153,14 +153,6 @@ while (cobaLagi) {
     kamu = "gajah";
   } else if (kamu == "semut") {
     kamu = "semut";
-  } else {
-    alert(
-      "tampak nya ada kesalahan dengan pilihan mu \n" +
-        '"' +
-        kamu +
-        '"' +
-        "\n coba perhatikan kembali jawaban mu "
-    );
   }
 
   if (komputer == kamu) {
@@ -232,6 +224,14 @@ while (cobaLagi) {
           "\n pemenang nya adalah kamu 🎉"
       );
     }
+  } else {
+    alert(
+      "tampak nya ada kesalahan dengan pilihan mu \n" +
+        '"' +
+        kamu +
+        '"' +
+        "\n coba perhatikan kembali jawaban mu "
+    );
   }
 
   cobaLagi = confirm(
