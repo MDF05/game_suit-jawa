@@ -134,7 +134,6 @@
 let cobaLagi = true;
 while (cobaLagi) {
   let komputer = Math.random();
-  let kamu = prompt("silahkan pilih di bawah ini \n semut \n gajah \n orang");
 
   if (komputer < 0.3) {
     komputer = "semut";
@@ -144,16 +143,27 @@ while (cobaLagi) {
     komputer = "gajah";
   }
 
+  let kamu = true;
+  while (kamu != "orang" && kamu != "gajah" && kamu != "semut") {
+    kamu = prompt("silahkan pilih di bawah ini \n semut \n gajah \n orang");
+    if (kamu == "orang") {
+      kamu = "orang";
+    } else if (kamu == "gajah") {
+      kamu = "gajah";
+    } else if (kamu == "semut") {
+      kamu = "semut";
+    } else {
+      alert(
+        'jawaban kamu eror coba perhatikan kembali dibawah\n "' +
+          kamu +
+          '" \n' +
+          "ketik pilihan dibawah \n semut \n gajah \n orang "
+      );
+    }
+  }
+
   alert("kamu memilih " + kamu);
   alert("komputer memilih " + komputer);
-
-  if (kamu == "orang") {
-    kamu = "orang";
-  } else if (kamu == "gajah") {
-    kamu = "gajah";
-  } else if (kamu == "semut") {
-    kamu = "semut";
-  }
 
   if (komputer == kamu) {
     alert(
