@@ -10,36 +10,111 @@
 
 <style>
     body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
         display: flex;
         justify-content: center;
-        height: 100vh;
         align-items: center;
+        height: 100vh;
+        margin: 0;
         flex-direction: column;
     }
 
-    button {
-        width: max-content;
-        height: max-content;
-        padding: 30px;
-        margin-bottom: 40px;
+    .container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
     }
 
-    a {
+    h1 {
+        color: #333;
+        margin-bottom: 2rem;
+    }
+
+    .choices {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 2rem;
+    }
+
+    .choice-btn {
+        background: none;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 2rem;
+    }
+
+    .choice-btn:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-2px);
+        border-color: #007bff;
+    }
+
+    .result-area {
+        margin-top: 2rem;
+        min-height: 100px;
+    }
+
+    .result-text {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+
+    .score {
+        margin-top: 1rem;
+        color: #666;
+    }
+
+    .nav-links {
+        margin-top: 2rem;
+    }
+
+    .nav-btn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
         text-decoration: none;
-        text-transform: capitalize;
+        font-size: 0.9rem;
+        margin: 0 5px;
+    }
+
+    .nav-btn:hover {
+        background-color: #0056b3;
     }
 </style>
+</head>
 
 <body>
 
-    <a href="https://gamesuitjawa.vercel.app/"><button>bermain suwit jawa lagi</button></a>
-    <a href="https://dava-rho.vercel.app/"
-        onclick="alert('website home belum selesai dan sedang dikerjakan \n coba lain waktu')">
-        <button>kembali ke home</button>
-    </a>
+    <div class="container">
+        <h1>Suit Jawa</h1>
 
+        <div class="choices">
+            <button class="choice-btn" id="gajah" onclick="playGame('gajah')" title="Gajah">🐘</button>
+            <button class="choice-btn" id="orang" onclick="playGame('orang')" title="Orang">🧍</button>
+            <button class="choice-btn" id="semut" onclick="playGame('semut')" title="Semut">🐜</button>
+        </div>
 
+        <div class="result-area">
+            <div id="vs-text">Choose your move!</div>
+            <div id="result-message" class="result-text"></div>
+        </div>
 
+        <div class="nav-links">
+            <a href="https://dava-rho.vercel.app/" class="nav-btn">Home</a>
+        </div>
+    </div>
 
     <script src="index.js"></script>
 </body>
